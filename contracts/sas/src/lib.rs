@@ -55,7 +55,7 @@ pub const PAUSED: Symbol = symbol_short!("PAUSED");
 pub const MAX_KNOWN_VERSION: u32 = 2;
 /// Maximum number of attestations in one multi_attest invocation. This keeps
 /// authorization and storage work within the measured Soroban budget envelope.
-pub const MAX_MULTI_ATTEST: u32 = 100;
+pub const MAX_MULTI_ATTEST: u32 = soroban_sas_common::MAX_MULTI_ATTEST;
 /// Maximum number of UIDs in one multi_revoke invocation. Bounded like
 /// `MAX_MULTI_ATTEST` so the loop cannot exhaust the Soroban budget and
 /// callers get a predictable `BatchTooLarge` error up front.

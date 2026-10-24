@@ -71,6 +71,9 @@ pub fn extend_instance_ttl(env: &Env) {
 /// payloads. (#157)
 pub const MAX_ATTESTATION_DATA_BYTES: u32 = 10_000;
 
+/// Maximum number of attestations accepted by the SAS batch issuance entrypoints.
+pub const MAX_MULTI_ATTEST: u32 = 100;
+
 #[contracttype]
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct UID(pub soroban_sdk::BytesN<32>);

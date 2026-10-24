@@ -23,7 +23,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "node init && tsup",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "test:testnet": "node scripts/testnet-wallet-smoke.mjs"

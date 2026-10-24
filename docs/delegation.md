@@ -134,6 +134,17 @@ consumed. The batch's `BatchAttested` / `BatchRevoked` summary event is emitted
 only after every per-item event, so a consumer that sees the summary knows the
 whole batch committed.
 
+The Rust SDK's `delegation::DelegatedBatchSigner` can create batch signatures
+without an RPC client or network connection. It uses the same typed-data
+digest helper as contract verification and checks batch length, strictly
+increasing nonces, signer-to-attester binding, attestation UID, revocation
+timestamp, and payload size locally. Its `DelegatedBatchSignaturePacket`
+contains the matching attestations and parallel nonce, signature, public-key,
+and digest vectors, which can be passed to
+`SASClient::multi_attest_by_delegation`. `to_json` exports an offline relay
+packet with attestations as hex-encoded XDR and the signature material as
+lowercase hex.
+
 ## Nonce model and limitations
 
 Delegated attestations and delegated revocations share one per-attester `u64`

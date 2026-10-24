@@ -4,12 +4,9 @@ node_modules
 /issues
 cargo_err.log
 .DS_Store
-.env
-.env.*
 !.env.example
 
 temp_auto_push.bat
-.env
 *.env.bak
 
 /fuzz/target/
@@ -22,3 +19,4 @@ cobertura.xml
 tarpaulin-report.json
 .gitignore
 branch_structure.json
+config.bat

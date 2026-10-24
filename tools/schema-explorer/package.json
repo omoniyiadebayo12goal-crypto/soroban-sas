@@ -5,8 +5,8 @@
   "description": "Prototype web dashboard for browsing and validating schemas in a deployed soroban-sas Schema Registry.",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "dev": "node init && vite",
+    "build": "node init && tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
